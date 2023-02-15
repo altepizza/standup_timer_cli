@@ -7,11 +7,14 @@ authors = ["Your Name <you@example.com>"]
 [tool.poetry.dependencies]
 python = "^3.11"
 textual = "^0.11.0"
+loguru = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
 ruff = "^0.0.246"
 yapf = "^0.32.0"
 pre-commit = "^3.0.4"
+aiohttp = "^3.8.4"
+msgpack = "^1.0.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
