@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "standup_cli"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+textual = "^0.11.0"
+
+[tool.poetry.dev-dependencies]
+ruff = "^0.0.246"
+yapf = "^0.32.0"
+pre-commit = "^3.0.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
