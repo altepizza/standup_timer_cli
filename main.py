@@ -45,6 +45,7 @@ class StandUpApp(App):
     speakers = ['A', 'B', 'C']
     random.shuffle(speakers)
     speakers.insert(0, WELCOME_MESSAGE)
+    speakers.append('Misc, QA')
 
     def init(self):
         list_view = self.query_one(ListView)
