@@ -42,10 +42,11 @@ class StandUpApp(App):
     ]
 
     current_speaker_idx = -1
-    speakers = ['A', 'B', 'C']
-    random.shuffle(speakers)
-    speakers.insert(0, WELCOME_MESSAGE)
-    speakers.append('Misc, QA')
+    primary_speakers = ['A', 'B', 'C', 'F', 'G']
+    secondary_speakers = ['X', 'Z']
+    random.shuffle(primary_speakers)
+    random.shuffle(secondary_speakers)
+    speakers=[WELCOME_MESSAGE] + primary_speakers + secondary_speakers +[ 'Misc, QA']
 
     def init(self):
         list_view = self.query_one(ListView)
@@ -67,8 +68,7 @@ class StandUpApp(App):
         else:
             self.current_speaker_idx += 1
 
-
-        end_time = datetime.strptime('09:30', '%H:%M')
+        end_time = datetime.strptime('00:25', '%H:%M')
         now = datetime.strptime(datetime.now().strftime('%H:%M:%S'), '%H:%M:%S')
         left_for_all = end_time - now
         left_for_next = left_for_all / (len(self.speakers) - self.current_speaker_idx)
