@@ -2,11 +2,13 @@ import random
 from datetime import datetime
 from time import monotonic
 
+from art import text2art
 from textual.app import App, ComposeResult
 from textual.reactive import reactive
 from textual.widgets import Footer, Header, Label, ListItem, ListView, Static
 
 WELCOME_MESSAGE = 'Welcome!'
+LOGO_TEXT = 'ASDF'
 
 class TimeDisplay(Static):
     time = reactive(0.0)
@@ -30,6 +32,7 @@ class TimeDisplay(Static):
         self.speaker_name = speaker_name
         self.end_time = monotonic() + time_to_speak
         self.update_timer.resume()
+
 
 class StandUpApp(App):
     """A Textual app to manage stopwatches."""
@@ -57,6 +60,7 @@ class StandUpApp(App):
         yield Header()
         yield TimeDisplay()
         yield ListView()
+        yield Static(text2art(LOGO_TEXT))
         yield Footer()
 
     def action_next(self) -> None:
@@ -68,7 +72,7 @@ class StandUpApp(App):
         else:
             self.current_speaker_idx += 1
 
-        end_time = datetime.strptime('00:25', '%H:%M')
+        end_time = datetime.strptime('09:25', '%H:%M')
         now = datetime.strptime(datetime.now().strftime('%H:%M:%S'), '%H:%M:%S')
         left_for_all = end_time - now
         left_for_next = left_for_all / (len(self.speakers) - self.current_speaker_idx)

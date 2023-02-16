@@ -30,6 +30,17 @@ python-versions = ">=3.7"
 frozenlist = ">=1.1.0"
 
 [[package]]
+name = "art"
+version = "5.8"
+description = "ASCII Art Library For Python"
+category = "main"
+optional = false
+python-versions = ">=2.7"
+
+[package.extras]
+dev = ["coverage (>=4.1)", "codecov (>=2.0.15)", "vulture (>=1.0)", "bandit (>=1.5.1)", "pydocstyle (>=3.0.0)"]
+
+[[package]]
 name = "async-timeout"
 version = "4.0.2"
 description = "Timeout context manager for asyncio programs"
@@ -562,11 +573,12 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.11"
-content-hash = "cd988757e8a02c0b374d4774c2683ce150f9e2d260fa9fed748255b00c261295"
+content-hash = "108b5f087b7f25882e133ee0183f668af651fe73d2b59e6b5f9656a6dfb5d49b"
 
 [metadata.files]
 aiohttp = []
 aiosignal = []
+art = []
 async-timeout = []
 attrs = []
 cfgv = []
