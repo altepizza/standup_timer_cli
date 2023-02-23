@@ -1,0 +1,6 @@
+primary_speakers = ['A', 'B', 'C', 'F', 'G']
+secondary_speakers = ['X', 'Z']
+
+end_time = '09:25'
+team_name = 'TEAM'
+welcome_message = "Good Morning!"
